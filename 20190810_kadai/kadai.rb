@@ -9,7 +9,7 @@ puts greeting
 puts "\r***** 2 ***********************************"
 total = 0
 for num in 1..10
-    total += num
+  total += num
 end
 puts "total => #{total}"
 
@@ -18,11 +18,11 @@ puts "total => #{total}"
 # 出来ればメソッドも用意して。
 puts "\r***** 3 ***********************************"
 def checkTrueFalse(arg)
-    if arg == 0
-        puts "argment: #{arg} => 偽"
-    elsif arg == 1
-        puts "argment: #{arg} => 真"
-    end
+  if arg == 0
+    puts "argment: #{arg} => 偽"
+  elsif arg == 1
+    puts "argment: #{arg} => 真"
+  end
 end
 checkTrueFalse(0)
 checkTrueFalse(1)
@@ -33,13 +33,13 @@ checkTrueFalse(1)
 puts "\r***** 4 ***********************************"
 colors = Array["Red", "Blue", "Yellow"]
 for color in colors
-    puts color
+  puts color
 end
 puts "\r"
 
 numbers = Array[1,2,3]
 for num in numbers
-    puts num
+  puts num
 end
 
 # ・Communicationというクラスを作ってみよう。
@@ -58,37 +58,37 @@ end
 puts "\r***** 5 ***********************************"
 
 class Communication
-    def greet(msg)
-        puts msg
-    end
+  def greet(msg)
+    puts msg
+  end
 end
 
 class WorkplaceCommunication < Communication
-    def initialize(place)
-        @place = place
-    end
+	def initialize(place)
+  	@place = place
+	end
 
-    def greet(msg, who)
-        begin
-            # 職場の場合
-            if @place.include?("work")
-                # 同僚の場合
-                if who == "colleague"
-                    puts msg
+	def greet(msg, who)
+  	begin
+    	# 職場の場合
+      if @place.include?("work")
+      	# 同僚の場合
+      	if who == "colleague"
+        	puts msg
 
-                # 上司の場合
-                elsif who == "boss"
-                    raise
-                end
-                
-            # 職場でない場合
-            elsif
-                puts "... (挨拶しない)"
-            end
-        rescue
-            puts "上司が挨拶してきました！(例外処理)"
+        # 上司の場合
+        elsif who == "boss"
+          raise
         end
+                
+      # 職場でない場合
+      elsif
+        puts "... (挨拶しない)"
+      end
+    rescue
+      puts "上司が挨拶してきました！(例外処理)"
     end
+  end
 end
 
 puts("- 職場の同僚の場合")
